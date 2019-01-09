@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* CSS Document */
+<!-- Gender Category List Item -->
+#gender-list-item
+{
+	width: 100%;
+	position:absolute;
+	top: 600px;
+	left: 0px;
+}
+#gender-list-item .left
+{
+	width: 80%;
+	position: absolute;
+	left: 0px;
+}
+#gender-list-item .right
+{
+	width: 22%;
+	position: absolute;
+	right: 0px;
+	top: 665px;
+}
+#gender-list-item .right h1
+{
+	color: #000;
+    text-align: center;
+    font: normal normal normal 35px/1.4em 'open sans',sans-serif;
+    text-transform: uppercase;
+    border: #000 2px solid;
+    width: 240px;
+    padding: 5px 10px;
+	position: absolute;
+	top: -8px;
+	left: 100px; 
+    background-color: #FFF;
+}
+
+#gender-list-item .right ul
+{
+	list-style-type: none;
+	position: relative;
+	top: 80px;
+}
+#gender-list-item .right li
+{
+	background-color: #000;
+	margin: 30px 0px;
+}
+#gender-list-item .right li:hover
+{
+	background-color: rgba(41, 64, 87, 1);
+}
+#gender-list-item .right li img
+{
+	vertical-align: top;
+	margin: 10px 10px;
+	width: 379px;
+	position: relative;
+	left: -10px;
+	top: -10px;
+	height: auto;
+	transition: color 0.4s ease 0s;
+}
+#gender-list-item .right p span
+{
+	color: #F60;
+}
+#gender-list-item .right p
+{
+	font-size: 20px !important;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin: 3px 0px;
+	position: relative;
+	top: -10px;
+	color: #FFF;
+}
+#gender-list-item .right span.blur-mua
+{
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+	position: absolute;
+	left: 40px;
+	top: 0px;
+    width: 379px;
+	height: 208px;
+    background: rgba(0, 0, 0, 0.4);
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+#gender-list-item .right span.blur-mua:hover
+{
+	opacity: 0.8;
+}
+#gender-list-item .right span.blur-mua button
+{
+	background-color: transparent;
+    border: solid #FFF 3px;
+    cursor: pointer !important;
+	font: normal normal normal 18px/1.4em 'open sans',sans-serif;
+    transition: color 0.4s ease 0s;
+    color: #FFF;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap; 
+	padding: 8px 36px;
+	text-align: center;
+	font-weight: bold;
+	top: 80px;
+	left: 100px;
+}
+#titlename-page
+{
+	height: 60px;
+	color: #FFF;
+	background-color: rgba(41, 64, 87, 1);
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+#titlename-page h1
+{
+	text-align: start;
+	font-size: 25px;
+	position: relative;
+	left: 80px;
+	top: -10px;
+}
+#titlename-page h1 > span
+{
+	font-size: 35px;
+}

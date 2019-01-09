@@ -1,0 +1,306 @@
+@charset "utf-8";
+/* CSS Document */
+#listitem
+{
+	background-color: transparent;
+	width: 100%;
+	position: absolute;
+	height: 1400px;
+}
+#listitem .ads
+{
+	width: 100%;
+}
+#listitem p > span
+{
+	text-decoration:line-through;
+}
+#listitem .ads h1
+{
+	text-align: left;
+	text-transform: uppercase;
+	font: bold bold bold 50px/1.4em 'open sans',sans-serif;
+}
+#listitem .ads .sneakersale
+{
+	height: 100px;
+	color: #FFF;
+	background-color: rgb(185, 152, 103);
+	position: absolute;
+	top: 90px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+}
+#listitem .ads .sneakersale:hover
+{
+	background-color: rgba(41, 64, 87, 1);
+	color: #FFF;
+}
+#listitem .ads .sneakersale h1
+{
+	font: normal normal normal 40px/1.4em 'open sans',sans-serif;
+	position: absolute;
+	left: 340px;
+}
+#listitem .ads .sneakersale button
+{
+	background-color: rgb(185, 152, 103);
+    border: solid #FFF 3px;
+    cursor: pointer !important;
+	font: normal normal normal 18px/1.4em 'open sans',sans-serif;
+    transition: color 0.4s ease 0s;
+    color: #FFF;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap; 
+	padding: 8px 36px;
+	text-align: center;
+	font-weight: bold;
+	top: 32px;
+	left: 550px;
+}
+#listitem .ads .sneakersale button:hover
+{
+	background-color: #FFF;
+	color: #000;
+	border: solid #000 3px;
+	border: none;
+	font-weight: bold;
+}
+#listitem ul
+{
+	position: absolute;
+	left: 30px;
+}
+#listitem li
+{
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 10px;
+	width: 330px;
+	height: 260px;
+	transition: color 0.4s ease 0s;
+}
+#listitem li:hover
+{
+	background: #000;
+	color: #FFF;
+	border: none;
+	opacity: 0.85;
+}
+#listitem img
+{
+	width: 100%;
+	height: auto;
+}
+#listitem .price-icon
+{
+	background-color: transparent;
+    color: #444444;
+	text-align: right;
+    font-family: 'TRMelf Freunde Font';
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    border: 2px solid #444;
+    border-radius: 3px;
+    padding: 0 10px;
+	
+}
+#listitem p
+{
+	font-size: 18spx !important;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#listitem span.blur-mua
+{
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+	position: absolute;
+    width: 330px;
+	height: 180px;
+    background: rgba(0, 0, 0, 0.4);
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+#listitem span.blur-mua:hover
+{
+	opacity: 0.8;
+}
+#listitem span.blur-mua button
+{
+	background-color: transparent;
+    border: solid #FFF 3px;
+    cursor: pointer !important;
+	font: normal normal normal 18px/1.4em 'open sans',sans-serif;
+    transition: color 0.4s ease 0s;
+    color: #FFF;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap; 
+	padding: 8px 36px;
+	text-align: center;
+	font-weight: bold;
+	top: 75px;
+	left: 75px;
+}
+#listitem .page
+{
+	position: absolute;
+}
+#listitem .page button
+{
+	background-color: #FFF;
+	color: #000;
+	border: 1px solid #000;
+	margin: 5px 5px;
+	font-size: 16px;
+	padding: 5px 10px;
+}
+#listitem .page button:hover
+{
+	background-color: #000;
+	color: #FFF;
+	cursor: pointer;
+}
+#brand-name
+{
+	height: 100px;
+	width: 100%;
+	position: absolute;
+	top: 165px;
+	background-color: #000;
+	color: #FFF;
+}
+#brand-name .left
+{
+width: 55%;
+background-color: #333;
+height: 100%;
+position: absolute;
+right: 0px;
+}
+#brand-name .left h1
+{
+	font-size: 80px;
+	letter-spacing: 15px;
+	position: absolute;
+	top: -58px;
+	left: 240px;
+}
+#brand-name .right
+{
+	width: 45%;
+	background-color: rgb(41, 64, 87);
+	height: 100%;
+	position: absolute;
+	left: 0px;
+}
+#brand-name .right h1
+{
+	font-size: 80px;
+	letter-spacing: 15px;
+	position: absolute;
+	top: -58px;
+	left: 250px;
+}
+#brand-info-below
+{
+	height: 220px;
+	width: 100%;
+	position: absolute;
+	top: 300px;
+	background-color: #000;
+	color: #FFF;
+}
+#brand-info-below .left
+{
+width: 55%;
+background-color: #333;
+height: 100%;
+position: absolute;
+right: 0px;
+}
+#brand-info-below .right
+{
+	width: 45%;
+	background-color: #FFF;;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	color: #333;
+}
+#brand-info-below .left ul
+{
+	list-style-type: none;
+	position: absolute;
+	left: -35px;
+}
+#brand-info-below .left li
+{
+	text-align: start;
+	background-color: transparent;
+	transition: all 0.3s;
+	color: #FFF;
+	padding: 10px 30px;
+	font-size: 18px;
+	margin: 0px -3px;
+	text-transform: uppercase;
+}
+#brand-info-below .left li a
+{
+	color: #FFF;
+}
+#brand-info-below .left li a:hover
+{
+	color: #000;
+}
+#brand-info-below .left li:hover
+{
+	background-color: #FFF;
+	color: #000;
+	cursor: pointer;
+}
+#brand-info-below .right .p1
+{
+	position: absolute;
+	top: -5px;
+	left: 195px;
+	font-size: 13px;
+	text-align: justify;
+	width: 650px;
+}
+#brand-info-below .right .p2
+{
+	position: absolute;
+	top: 135px;
+	left: 8px;
+	font-size: 13px;
+	text-align: justify;
+	width: 98%;
+}
+#brand-info-below .right:hover
+{
+	background-color: rgb(41, 64, 87);
+	color: #FFF;
+}
+#brand-info-below .nike:hover
+{
+	background-color: #F33;
+	color: #FFF;
+}
+#brand-info-below .asics:hover
+{
+	background-color: darkgray;
+	color: #FFF;
+}

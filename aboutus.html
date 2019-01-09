@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Sneaker Store Online in Vietnam - Sneaker News for Vietnamese /">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="aboutus.css" />
+<title>SneakerST|VN - Sneaker Store Online Vietnam - Sneaker News</title>
+<script>
+	function anhien(id1, id2, id3, id4)
+	{
+		var annoidung=document.getElementById(id1);
+		var hiennoidung=document.getElementById(id2);
+		var doimau=document.getElementById(id3);
+		var tatdoimau=document.getElementById(id4);
+		doimau.style.backgroundColor="#000";
+		doimau.style.color="#FFF";
+		doimau.style.fontWeight="bold";
+		tatdoimau.style.backgroundColor="#FFF";
+		tatdoimau.style.color="#000";
+		tatdoimau.style.fontWeight="normal";
+		annoidung.style.display="none";
+		hiennoidung.style.display="block";
+	}
+
+function search()
+{
+	var key=document.getElementById('search_key').value;
+	window.open("http://google.com/search?q="+key+"");
+	location.reload();
+}
+</script>
+<script src="switch_banner.js"></script>
+<script src="checkform_aboutus.js"></script>
+</head>
+<body onload="checkcountcart()" style="background-color: #F0F0F0;">
+<div id="header_wrap">
+<ul id="navbar">
+<li><a href="index.html"><img class="logo_sneaker" src="images/logo.png" alt="SneakerST|VN" title="Shop Sneaker Online - Tin tức về Sneaker" /></a></li>
+<li class="topdown_menu"><a href="hangmoi-page1.html" title="Hàng mới">Hàng mới</a>
+	<ul class="dropdown_menu" style="width: 100%; height: 260px;">
+    <div class="content_align">
+            	<li><img src="images/men.jpg" alt="Men" title="Giày Nam mới" /> <p>Giày Nam</p><span class="blur-content"><span><a href="men.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/woman.jpg" alt="Woman" title="Giày Nữ mới" /> <p>Giày Nữ</p><span class="blur-content"><span><a href="woman.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/newwear.jpg" alt="Wear" title="Áo quần thể thao" /> <p>Áo quần thể thao</p><span class="blur-content"><span><a href="wear.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+           
+        </div>
+    </ul></li>
+<li class="topdown_menu"><a href="#" title="Sneakers">SneakerS</a>
+<ul class="dropdown_menu menu1" style="left: 436px;">
+                <li><a href="men.html">NAM</a></li>
+                <li><a href="woman.html">NỮ</a></li>
+                <li><a href="basketball.html">BÓNG RỔ</a></li>
+    </ul>
+</li>
+<li class="topdown_menu"><a href="#" title="Thương hiệu">Thương hiệu</a>
+<ul class="dropdown_menu menu1" style="left: 549px;">
+                <li><a href="adidas.html" target="_blank">Adidas</a></li>
+                <li><a href="newbalance.html" target="_blank">New Balance</a></li>  
+                <li><a href="nike.html" target="_blank">Nike</a></li>
+                <li><a href="acis.html" target="_blank">ASICS</a></li>
+                <li><a href="jordan.html" target="_blank">Jordan</a></li>  
+</ul></li>
+<li><a href="sale.html" title="SALE">SALE</a></li>
+<li><a href="wear.html" title="Áo quần thể thao">Áo quần thể thao</a></li>
+<li><a href="blog.html" title="Blog - Tin tức">Blog - News</a></li>
+<li><a href="aboutus.html" title="Về chúng tôi">Về chúng tôi</a></li>
+<li><a href="printorder.html" target="_blank" title="Kiểm tra đơn hàng">Kiểm tra đơn hàng</a></li>
+<li><a href="cart.html" target="_blank" title="Xem giỏ hàng" id="countgiohang" onmouseover="showcart()">Giỏ hàng (0)</a><div id="cartlist" style="position: absolute; max-width: 440px; max-height: 1050px; background-color: #000; color: #FFF; top: 95px; padding: 5px; box-sizing: content-box;" onmouseout="hidecart()"></div></li>
+<li><input type="text" placeholder="Tìm kiếm" id="search_key" class="search" /><button class="search_button" type="submit" onclick="search()"></button></li>
+</ul>
+</div>
+<div id="header_below">
+<p>Miễn phí Vận chuyển & Hoàn trả sản phẩm
+<span>* Trong vòng 7 ngày</span></p>
+</div>
+<div id="content_aboutus">
+	<div id="content">
+	<div class="left">
+    <h1>SNEAKERST VIETNAM</h1>
+    	<ul>
+        	<li id="whois" onclick="anhien('contact', 'who', 'whois', 'contactusnow')">Chúng tôi là ai?</li>
+            <li id="contactusnow" onclick="anhien('who', 'contact', 'contactusnow', 'whois')">Liên hệ</li>
+        </ul>
+        <div id="bando"><div id="gmap-display" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=122/10+Quang+Trung,+Ho+Chi+Minh,+Quận+12,+Vietnam&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="code-for-google-map" href="https://www.treat-lice.com" id="grab-map-data">here</a><style>#gmap-display .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.treat-lice.com/google-maps-authorization.js?id=4b842d8c-37bc-d8eb-37ea-a7070732c56b&c=code-for-google-map&u=1456034547" defer="defer" async="async"></script>
+    </div>
+    <div class="right">
+    	<div id="who">
+        	<h1>Về chúng tôi</h1>
+            <div class="introduce">
+            	<p>Chúng tôi là những người trẻ đam mê những công việc sáng tạo lẫn mang tính nghệ thuật.
+                Những đôi giày Sneaker mới mẻ và độc đáo được chúng tôi tỷ mỹ từ những khâu nhỏ nhất đến những khâu phức tạp nhất.
+                Niềm vui của khách hàng chính là động lực thúc đẩy cho chúng tôi phát triển thêm mô hình kinh doanh của mình.</p>
+            </div>
+            <h1>Thông tin liên hệ</h1>
+            <ul>
+            	<li>SneakerST Việt Nam</li>
+                <li>Địa chỉ: Địa chỉ: 122/10 Quang Trung, Quận 12, TP.HCM</li>
+                <li>Hotline: 0165.201.627</li>
+                <li>Email: hotro.sneakerst@gmail.com</li>
+            </ul>
+        </div>
+        <div id="contact">
+        <h1>LIÊN HỆ</h1>
+        <form>
+        <table>
+        	<tr>
+            	<td><span class="caption">Tên của bạn: </span><span class="red">* </span></td>
+                <td><input type="text" class="text" id="ten"/></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Email: </span><span class="red">* </span></td>
+                <td><input type="text" class="text" id="email" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Số điện thoại: </span><span class="red">* </span></td>
+                <td><input type="text" class="text" id="dienthoai" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Tên thư yêu cầu: </span><span class="red">* </span></td>
+                <td><input type="text" class="text" id="tenyeucau" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Nội dung: </span><span class="red">* </span></td>
+                <td><textarea cols="20" rows="5" class="inputmessage" id="tinnhan"></textarea></td>
+           </tr>
+           	<tr><td><button onclick="guiform()">GỬI</button></td></tr>
+        </table>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
+<div id="sneakersale" style="top: 820px;">
+<h1>ĐỢT GIẢM GIÁ LỚN NHẤT ĐẦU NĂM 2016 LÊN TỚI 60%</h1>
+<a href="sale.html"><button>MUA NGAY</button></a>
+</div>
+<div id="footer" style="top: 920px;">
+<script type="text/javascript">
+function dasend()
+	{
+		alert('Đã gửi! Cảm ơn bạn đã quan tâm đến chúng tôi.');
+		location.reload();
+	}
+</script>
+<div class="container">
+<h3>ĐĂNG KÝ NHẬN BẢN TIN</h3>
+<table>
+<tr>
+<td><input type="text" placeholder="Nhập email của bạn vào đây" class="email" maxlength="50" /></td>
+<td><button onclick="dasend()">ĐĂNG KÝ</button></td>
+</tr>
+</table>
+<ul>
+<li><a href="#"><img src="index/icon/facebook-icon.png" /></a></li>
+<li><a href="#"><img src="index/icon/instagram-icon.png" /></a></li>
+<li><a href="#"><img src="index/icon/pinterest-icon.png" /></a></li>
+<li><a href="#"><img src="index/icon/tumblr-icon.png" /></a></li>
+<li><a href="#"><img src="index/icon/twittr-icon.png" /></a></li>
+<li><a href="#"><img src="index/icon/youtube-icon.png" /></a></li>
+</ul>
+<img src="index/icon/payments-world.png" alt="Payment" style="position: relative; top: -20px; width: 300px; height: auto; left: 110px;"/>
+</div>
+<div class="info_footer">
+</div>
+<ul class="info">
+<h2>Thông tin</h2>
+<li><b>SneakerST Vietnam</b></li>
+<li>Địa chỉ: 122/10 Quang Trung, Quận 12, TP.HCM</li>
+<li>Hotline: 0165.2001.627</li>
+<li>Email: hotro.sneakerst@gmail.com</li>
+</ul>
+<div class="copyright">Website Designed by Đức Mê IT | SneakerST Vietnam &copy;2016.</div>
+<img src="images/logo_footer.png" alt="logo" class="copyright_logo"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Buy Game PC</title>
+
+<link rel="stylesheet" href="style.css"/>
+<script>
+var i = 1;
+var arrImg = ["image/diablo.jpg","image/assasin.jpg","image/1.jpg"];
+var arrLink =[""];
+
+ 
+function previous(){
+	var theImg = document.getElementById("headerImg");
+	i--;
+	if(i==-1)
+		i=2;
+	theImg.src=arrImg[i];	
+}
+function next(){
+		var theImg = document.getElementById("headerImg");
+	i++;
+	if(i==3)
+		i=0;
+	theImg.src=arrImg[i];
+}
+
+function DataProduct(code, img, name, price, amount){
+	this.code = code;
+	this.img = img;
+	this.name = name;
+	this.price = price;
+	this.amount = amount;
+	this.isSame = function(code){
+		if(this.code.localeCompare(code) == 0)
+			return true;
+		return false;	
+	}
+}
+
+function getInfo(indexCode){
+		var tag= document.getElementsByName('product').item(indexCode);
+		var spanTag = tag.getElementsByTagName('span'); 
+		var imgTag = tag.getElementsByTagName('img');
+
+		var img = imgTag.item(0).src;
+	 	var name = spanTag.item(0).innerHTML; 
+		var price = spanTag.item(1).innerHTML;
+		
+			document.getElementsByClassName('main').item(0).style.opacity = '0.5';
+		
+		//lay id cua detailDiv va cac the con trong detailDiv
+		var detailDiv = document.getElementById('detailGame');
+		var light = document.getElementById('tatDen');
+		var detailTag = detailDiv.getElementsByTagName('span');
+		var detailImgTag = detailDiv.getElementsByTagName('img');
+		var amount = document.getElementById('amount');
+			detailDiv.style.display = "block";
+			light.style.display = "block";
+			 //alert("img: " + img);
+			 detailImgTag.item(0).src = img;
+			 
+			 //alert("imgd " + img);
+			 detailTag.item(0).innerHTML = name;
+			 detailTag.item(1).innerHTML = indexCode;
+			 detailTag.item(3).innerHTML = price;
+}
+function saveToCart(){
+		var sLogin =  document.getElementById('bannerRight2').style.display;// = "none";
+		if(sLogin == "none"){
+			alert("Bạn chưa đăng nhập");
+		return;	
+		}
+		
+		var userSaved = localStorage.getItem('currentAcc');
+		var dataUserSaved = JSON.parse(userSaved);
+		var keyToSaveGame = dataUserSaved.username;
+		alert(keyToSaveGame);
+		//lay id cua detailDiv va cac the con trong detailDiv
+		var detailDiv = document.getElementById('detailGame');
+		var light = document.getElementById('tatDen');
+		var detailTag = detailDiv.getElementsByTagName('span');
+		var detailImgTag = detailDiv.getElementsByTagName('img');
+		
+		var img = detailImgTag.item(0).src;
+		//alert("im" + img);
+		var name = detailTag.item(0).innerHTML;
+		
+		var indexCode = detailTag.item(1).innerHTML;
+		var price = detailTag.item(3).innerHTML;
+		var amount = document.getElementById('amount').value;
+		 var ListGame = []; 
+		
+		// localStorage.clear();
+		var read = localStorage.getItem(keyToSaveGame);
+		if(!read){
+			alert("List Empty");
+			ListGame[0] = new DataProduct(indexCode, img,name,price,amount);
+			localStorage.setItem(keyToSaveGame,JSON.stringify(ListGame));
+		}
+		else{
+			var storedData = localStorage.getItem(keyToSaveGame);	
+			var ListGame = JSON.parse(storedData); //alert("aa");
+			for(var i = 0; i < ListGame.length;i++){
+			//alert("indexcode" + indexCode + "code: " + ListGame[i].code);
+			//alert("fdg");
+			// var theCode = ListGame[i].code;
+			 //alert("thecode" + theCode);
+				if(ListGame[i].code == indexCode){
+				alert("Bạn đã thêm vào giỏ hàng"); 
+				return;
+				}
+			}
+					ListGame[ListGame.length] = new DataProduct(indexCode, img,name,price,amount);
+					localStorage.setItem(keyToSaveGame, JSON.stringify(ListGame));
+					alert("Đã thêm vào giỏ hàng");
+		}
+		
+		
+}
+function closeDetail(){
+			 document.getElementsByClassName('main').item(0).style.opacity = '1';
+			 document.getElementById('detailGame').style.display = "none";
+			 document.getElementById('tatDen').style.display = "none";
+			
+}
+function displayRegister(){
+	 document.getElementsByClassName('main').item(0).style.opacity = '0.5';
+			 document.getElementById('registerDiv').style.display = "block";
+			 document.getElementById('tatDen').style.display = "block";
+	
+}
+
+function closeDiv(){
+	var divRegister = document.getElementById('registerDiv');
+	if(divRegister.style.display == "block"){
+		divRegister.style.display = "none";	
+		document.getElementById('tatDen').style.display = "none";
+		 document.getElementsByClassName('main').item(0).style.opacity = '1';
+	}
+	var divDetail =  document.getElementById('detailGame');
+	if(divDetail.style.display == "block"){
+		closeDetail();
+	}
+}
+
+function Account(ho, ten, username, email, password, sex, address){
+	this.ho = ho;
+	this.ten = ten;
+	this.username = username;
+	this.email = email;
+	this.password = password;
+	this.sex = sex;
+	this.address = address;	
+}
+
+function newRegister(){
+	var ho = document.getElementById('hoReg').value;
+	var ten = document.getElementById('nameReg').value;
+	var username = document.getElementById('userNameReg').value;
+	var password = document.getElementById('passwordReg').value;
+	var email = document.getElementById('emailReg').value;
+	var sex; 
+	 if(document.getElementById('maleReg').checked)
+		sex = document.getElementById('maleReg').value;
+	 else
+		sex = document.getElementById('femaleReg').value;
+		//alert("sex" + sex);
+	var address = document.getElementById('addressReg').value; 
+	var acc = [];
+	var storedData = localStorage.getItem('account');	
+	if(!storedData){
+		acc[0] = new Account(ho,ten,username,email,password,sex,address);
+		localStorage.setItem('account',JSON.stringify(acc));
+	}
+	else{
+		var listAcc = JSON.parse(storedData);	
+		//alert("length: " + listAcc.length);
+		for(var i = 0; i < listAcc.length; i++)
+			if(listAcc[i].username == username){
+				//username da ton tai
+				//alert("user: " + listAcc[i].username + "user:: " + username);
+				alert("Username da ton tai");
+				return;	
+			}
+			listAcc[listAcc.length] = new Account(ho,ten,username,email,password,sex,address);
+			localStorage.setItem('account',JSON.stringify(listAcc));
+		} 
+	alert("Đăng kí thành công");
+}
+
+function login(){
+	//localStorage.removeItem('account');
+		var username = document.getElementById('userLogin').value;
+		var password = document.getElementById('passLogin').value;
+		var storedData = localStorage.getItem('account');
+		//var dataAccSaved = localStorage.getItem('currentAcc');
+		/*if(dataAccSaved){
+			var acc = JSON.parse(dataAccSaved);alert("length: " + acc.length);
+			alert(acc.username + " current " + acc.password);
+			alert("a");return;	
+		}*/
+		if(!storedData){
+			alert("Tài khoản-Mật khẩu không đúng hoặc không có");
+			return;
+			
+		}
+		var listAcc = JSON.parse(storedData);//alert(listAcc.length);
+		for(var i = 0; i < listAcc.length; i++){
+			//alert("user: " + listAcc[i].username + "user:: " + username);
+			//alert("user: " + listAcc[i].password + "user:: " + password);
+			if((listAcc[i].username == username) && (listAcc[i].password == password)){
+			//thay doi khung login-chao mung name, gio hang key = username;	
+			
+			 welcomeUser(listAcc[i]);
+			localStorage.setItem('currentAcc',JSON.stringify(listAcc[i]));
+			alert("dang nhap thanh cong");
+			return;
+			}
+		}
+			alert("Tài khoản-Mật khẩu không đúng hoặc không có");
+		
+		
+	
+}
+
+function getLogin(){
+	document.cookie ="hello=aaa";// '"username="'+ username+'";password="'+password+'"';
+	var x = document.cookie;
+	alert("x: " + x);	
+}
+
+function welcomeUser(account){
+	document.getElementById('bannerRight2').style.display = "block";
+	document.getElementsByClassName('bannerRight').item(0).style.display = "none";
+	document.getElementById('nameWelcome').innerHTML = account.ho + "&nbsp;"+ account.ten;
+}
+
+function autoLogin(){
+	var storedData = localStorage.getItem('currentAcc');
+	if(storedData){
+		var accLogin = JSON.parse(storedData);
+		welcomeUser(accLogin);
+		
+	}
+}
+
+function logout(){
+	localStorage.removeItem('currentAcc');	
+	document.getElementById('bannerRight2').style.display = "none";
+	document.getElementsByClassName('bannerRight').item(0).style.display = "block";
+}
+
+function displayNews(){
+	document.getElementById('displayProduct').style.display = 'none';	
+	document.getElementById('iframeNews').style.display = 'block';	
+}
+
+function displayProduct(){
+		document.getElementById('displayProduct').style.display = 'block';	
+	document.getElementById('iframeNews').style.display = 'none';	
+
+}
+</script>
+
+</head>
+
+<body onload="autoLogin()" >
+<div class="main">
+<div class="banner">
+	<div class="bannerRight">
+    <table >
+    <tr>
+        <td style="color:#fff">Username:</td>
+        <td><input type="text" id="userLogin"/></td>
+    </tr>
+    <tr>
+        <td style="color:#fff">Password: </td>
+        <td><input type="text" id="passLogin"/></td>
+    </tr> 
+    <tr>
+    	<td  colspan="2"> <span onclick="displayRegister()">Đăng kí</span><span> | </span><span onclick="login()">Đăng nhập </span></td>
+        <td></td>
+    </tr>
+</table>
+
+   
+    </div>
+    <div id="bannerRight2" style="display:none;">
+    <table>
+    	<tr>
+        	<td><span id="nameWelcome"></span><span style="color:white;">Chào&nbsp; </span></td>
+        </tr>
+        <tr>
+        <td><a href="cart.html" style="float:right;">Xem giỏ hàng</a></td>
+        </tr>
+        <tr>
+        <td><span id="exitWelcome" onclick="logout()">Thoát</span></td>
+        </tr>
+    
+    </table>
+    
+    <br /><span></span><br />
+    
+    
+    </div>
+</div>
+<div class="menu">
+	<ul class="menuGame1">
+		<li><a href="AAAProject.html">Trang chủ</a></li>
+        <li>Hành động
+            <ul class="menuGame2">
+            	<li><a href="" >Bắn súng</a></li>
+               	<li><a href="" >Nhập vai</a></li>
+                <li><a href="" >Kinh dị</a></li>                
+                <li><a href="" >Thế giới mở</a></li>
+            </ul>
+        </li>
+        <li>Chiến thuật
+          <ul class="menuGame2">
+            	<li><a href="" >Theo lượt</a></li>
+               	<li><a href="" >Thời gian thực</a></li>
+                <li><a href="" >Thủ thành</a></li>
+            </ul>
+        </li>
+        <li>Thể thao
+          <ul class="menuGame2">
+            	<li><a href="" >Đá bóng</a></li>
+               	<li><a href="" >Đua xe</a></li>
+                <li><a href="" >Quản lí đội bóng</a></li>
+            </ul>
+        </li>
+        <li>Khác</li>
+            
+    </ul>
+
+</div>
+<div class="header">
+<div class="headerLeft">
+	<a href="" id="link"><img src="image/1.jpg" id="headerImg"/></a>
+    <input type="button" value="&#10094" id="leftArrow" onclick="previous()"/>
+     <input type="button" value="&#10095" id="rightArrow" onclick="next()"/>
+</div>
+<div class="headerRight">
+<div class="smallGame">
+<a href="#">
+<img src="image/diablo.jpg" /></a>
+<a href="#" >Game diablo 3</a>
+
+</div>
+</div>
+</div>
+<div class="container">
+
+<div class="left">
+	<div class="news">
+    <div class="title">Danh mục</div>
+    <div class="newContext">
+	<ul class="ul1"> 
+        <li><a href="news/gioithieu.html" onclick="displayNews()" target="displayIframe" >Giới thiệu</a></li>
+        <li><a href="news/dieukhoandichvu.html" onclick="displayNews()" target="displayIframe" >Điều khoản dịch vụ</a></li>
+        <li><a href="news/hdmuahang.html" onclick="displayNews()" target="displayIframe" >Hướng dẫn thanh toán</a></li>
+        <li><a href="news/lienhe.html"  onclick="displayNews()" target="displayIframe" >Liên hệ</a></li>                                      
+    </ul>
+    </div>
+   </div>
+    
+    <div class="news">
+     <div  class="title">Tin tức</div>
+     <div class="newsContext">
+     <ul class="ul1"> 
+        <li><a href="news/lienminhaz.html" onclick="displayNews()" target="displayIframe" >Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></li>
+        <li><a href="news/lienminhaz.html" onclick="displayNews()" target="displayIframe" >Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></li>
+        <li><a href="news/lienminhaz.html" onclick="displayNews()" target="displayIframe" >Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></li>
+        <li><a href="news/lienminhaz.html" onclick="displayNews()" target="displayIframe" >Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></li>
+        <li><a href="news/lienminhaz.html" onclick="displayNews()" target="displayIframe" >Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></li>
+                                         
+    </ul>
+      <p> <a href="">Liên Minh Huyền Thoại: Lắng nghe bài rap về Hoàng Đế Sa Mạc - Azir</a></p>
+     <p> <a href="">Thong bao den quy khach hang</a></p>
+     <p><a href="">Huong dan chuyen doi ngon ngu</a></p>
+      <p><a href="">Huong dan chuyen doi</a></p>
+       <p><a href="">Huong dan choi game</a></p>
+      </div>
+   
+    </div>
+    
+  
+    
+</div>
+
+<div class="mid">
+<div class="title">Trang chủ</div> 
+
+<div id="displayProduct">
+<div class="game" name="product">
+<a >
+<img src="image/one.jpeg" id="imgGame"/><br />
+<span id="nameGame">Rainbow</span><br />
+<span id="priceGame">40.000</span> <sup><u>đ</u></sup>
+<input type="button" value ="Buy Now" onclick="getInfo(0)"/></a>
+</div>
+
+<div class="game" name="product">
+<div>
+<img src="image/wallpaper.jpg" id="imgGame"/><br />
+<span class="nameGame">Rainbow Six Siege season pdddddddddd ddas</span><br />
+<span class="priceGame">900.000</span> <sup><u>đ</u></sup>
+<input type="button" value ="Buy Now" onclick="getInfo(1)"/></div>
+</div>
+
+<div class="game" name="product">
+<div>
+<img src="image/1.jpg" id="imgGame"/><br />
+<span class="nameGame">BattleField</span><br />
+<span class="priceGame">900.000</span> <sup><u>đ</u></sup>
+<input type="button" value ="Buy Now" onclick="getInfo(2)"/></div>
+</div>
+ </div>
+<iframe id="iframeNews" src="index.html" name="displayIframe" scrolling="no"></iframe>
+
+</div>
+</div>
+
+
+<div class="footer">
+<table align="left">
+<tr style="font-weight:bold">
+    <td>Thông tin</td>
+    <td >Chính sách</td>
+    <td>Hỗ trợ khách hàng</td>
+    <td>Tài khoản</td>
+</tr>
+<tr>
+	<td><a href="news/dieukhoandichvu.html" target="displayIframe" onclick="displayNews()" >Điều khoản dịch vụ</a></td>
+    <td><a href="news/chinhsachbaomat.html" target="displayIframe" onclick="displayNews()">Chính sách bảo mật</a></td>
+    <td><a href="news/hdmuahang.html" target="displayIframe" onclick="displayNews()">Hướng dẫn mua hàng</a></td>
+    <td><a href="news/9sachdoitra.html" target="displayIframe" onclick="displayNews()">Chính sách đổi trả</a></td>
+</tr>
+<tr>
+	<td><a href="news/gioithieu.html"  target="displayIframe" onclick="displayNews()">Về tôi</a></td>
+    <td></td>
+    <td></td>
+    <td><a href="cart.html">Giỏ hàng</a></td>
+</tr>
+<tr>
+	<td><a href=""></a></td>
+    <td></td>
+    <td></td>
+    <td><a href="">Game đã mua</a></td>
+</tr>
+
+</table>
+<p id="footerP">
+Website cung cấp game bản quyền tại việt nam<br />
+Giấy phép kinh doanh số 123696969<br />
+Hotline: 01678589696<br />
+Website đã xác thực với bộ công thương việt nam<hr style="float:left;border:thin solid #666; width:100%;"/>
+</p><p style="text-align:center; width:100%; margin:0px;">Copyright &reg; Lucnsse61984</p><br />
+<br /><br />
+
+
+
+
+</div>
+
+</div>
+
+
+
+<!--Thong tin game-->
+<div id="tatDen" onclick="closeDiv()"></div>
+<div id="detailGame">
+
+<h2 class="titleGame"></h2>
+<img src=""   />
+<div class="detail">
+
+Tên hàng: <span id="nameGame"></span><br />
+Mã đơn hàng: <span id="producCode"></span><br />
+Trạng thái: <span>Còn hàng</span><br />
+Giá: <span id="priceGame"></span><sup>đ</sup><br />
+Số lượng: <input type="text" value="1" id="amount"/><hr /><br />
+<input type="button" value="Mua tiếp" class="inputButton" onclick="closeDetail()"/>
+<input type="button" value="Thêm vào giỏ hàng" class="inputButton" onclick="saveToCart()"/>
+<a href="cart.html"><input type="button" value="Thanh toán" class="inputButton"/></a></div></div>
+
+<div id="registerDiv">
+	<table align="center" cellpadding="5px">
+    <tr>
+    	<th style="font-size:30px; color:#F00">Đăng kí</th>
+    </tr>
+    <tr> 
+    <td><input id="hoReg" type="text" placeholder="Họ" style="width:100px;"/>
+    <input id="nameReg" type="text" placeholder="Tên" style="width:100px;"/></td>
+    </tr>
+    <tr>   
+    <td><input id="userNameReg" placeholder="Tên tài khoản" type="text"/></td>
+    </tr>
+    
+    <tr> 
+    <td><input id="passwordReg" type="text" placeholder="Mật khẩu"/></td>
+    </tr>
+    
+    <tr> 
+    <td><input id="emailReg" type="text" placeholder="Email"/></td>
+    </tr>
+    <tr> 
+    <td><input id="addressReg" type="text" placeholder="Địa chỉ"/></td>
+    </tr>
+    <tr> 
+    <td>Nam: <input id="maleReg" type="radio"  value="male" checked="checked" name="sex"/>Nữ: <input id="femaleReg" type="radio" name="sex" value="female"/></td>
+    </tr>
+    
+    <tr><td><input type="button" value="Đăng kí" onclick="newRegister()"/></td></tr>
+    
+    
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	background-color: #F0F0F0;
+}
+#order_content
+{
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#content_order
+{
+	position: relative;
+	background-color: #FFF;
+	top: 120px;
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: none;
+}
+#content_order h1
+{
+	margin-left: 20px;
+	margin-top: 5px;
+	font-size: 25px;
+	font-weight: normal;
+}
+#content_order .info_khachhang
+{
+	width: 100%;
+}
+#content_order .left
+{
+	width: 49%;
+	border: 1px solid #000;
+	float: left;
+}
+#content_order li
+{
+	list-style-type:none;
+	margin: 5px 0px;
+	font-size: 16px;
+	position: relative;
+	left: -20px;
+	width: 100%;
+}
+#content_order span
+{
+	font-weight: bold;
+}
+#content_order li.label
+{
+	border-bottom: 1px #000 solid;
+	text-align: center;
+	padding-bottom: 15px;
+	font-weight: bold;
+}
+#content_order .right
+{
+	width: 49%;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	float: left;
+}
+#content_order .sanpham
+{
+	position: relative;
+	top: 30px;
+}
+#content_order .sanpham .item
+{
+	height: 140px;
+	padding: 6px 0px;
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#content_order .sanpham .c1
+{
+	width: 47%;
+	float: left;
+	margin-right: 4%;
+}
+#content_order .sanpham .c1 img
+{
+	height: 100%;
+	width: 100%;
+}
+#content_order .sanpham .c1 .c1_img
+{
+	width: 50%;
+	height: 140px;
+	float: left;
+	margin-right: 4%;
+}
+#content_order .sanpham .c1_info
+{
+	width: 46%;
+	float: left;
+	text-transform: uppercase;
+	font-weight: bold;
+	height: auto;
+}
+#content_order .sanpham .c1_info span
+{
+	color: #F00;
+}
+#content_order .sanpham .c2
+{
+	width: 15%;
+	float: left;
+	margin-right: 2%;
+}
+#content_order .sanpham .c3
+{
+	width: 15%;
+	float: left;
+	margin-right: 4%;
+}
+#content_order .sanpham .c3 span
+{
+	margin-left: 30px;
+}
+.total_tien
+{
+	position: relative;
+	top: 10px;
+	height: 50px;
+	background-color: #222;
+	color: #FFF;
+	padding: 10px 0px;
+	font-size: 30px;
+}
+#total
+{
+	float: right;
+	margin-right: 20px;
+}
+#xemdonhang
+{
+	position: relative;
+	width: 100%;
+	top: 100px;
+	background-color: #FFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#xemdonhang input
+{
+	width: 200px;
+	margin-left: 340px;
+	height: 45px;
+	color: #000;
+	font-size: 30px;
+	border: 1px #222 solid;	
+}
+#xemdonhang button
+{
+	text-transform: uppercase;
+    height: 50px;
+    color: #FFF;
+    background-color: rgba(41, 64, 87, 1);
+    font-size: 30px;
+    cursor: pointer;
+	border: none;
+	width: 200px;
+	margin-left: 10px;
+	
+}
+#xemdonhang button:hover
+{
+	background-color: rgb(185, 152, 103);
+	border: none;
+	color: #FFF;
+}

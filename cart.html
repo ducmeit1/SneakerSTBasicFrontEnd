@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Sneaker Store Online in Vietnam - Sneaker News for Vietnamese">
+<meta name="author" content="DucMeIT">
+<meta http-equiv="content-language" content="en">
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="cart.css" />
+<title>SneakerST|VN - Sneaker Store Online Vietnam - Sneaker News</title>
+<script src="getinfo_cart.js"></script>
+<script>
+function search()
+{
+	var key=document.getElementById('search_key').value;
+	window.open("http://google.com/search?q="+key+"");
+	location.reload();
+}
+</script>
+</head>
+
+<body onload="printItem(); randomnumber(1500);">
+<div id="header_wrap">
+<ul id="navbar">
+<li><a href="index.html"><img class="logo_sneaker" src="images/logo.png" alt="SneakerST|VN" title="Shop Sneaker Online - Tin tức về Sneaker" /></a></li>
+<li class="topdown_menu"><a href="hangmoi-page1.html" title="Hàng mới">Hàng mới</a>
+	<ul class="dropdown_menu" style="width: 100%; height: 260px;">
+    <div class="content_align">
+            	<li><img src="images/men.jpg" alt="Men" title="Giày Nam mới" /> <p>Giày Nam</p><span class="blur-content"><span><a href="men.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/woman.jpg" alt="Woman" title="Giày Nữ mới" /> <p>Giày Nữ</p><span class="blur-content"><span><a href="woman.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/newwear.jpg" alt="Wear" title="Áo quần thể thao" /> <p>Áo quần thể thao</p><span class="blur-content"><span><a href="wear.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+           
+        </div>
+    </ul></li>
+<li class="topdown_menu"><a href="#" title="Sneakers">SneakerS</a>
+<ul class="dropdown_menu menu1" style="left: 436px;">
+                <li><a href="men.html">NAM</a></li>
+                <li><a href="woman.html">NỮ</a></li>
+                <li><a href="basketball.html">BÓNG RỔ</a></li>
+    </ul>
+</li>
+<li class="topdown_menu"><a href="#" title="Thương hiệu">Thương hiệu</a>
+<ul class="dropdown_menu menu1" style="left: 549px;">
+                <li><a href="adidas.html" target="_blank">Adidas</a></li>
+                <li><a href="newbalance.html" target="_blank">New Balance</a></li>  
+                <li><a href="nike.html" target="_blank">Nike</a></li>
+                <li><a href="acis.html" target="_blank">ASICS</a></li>
+                <li><a href="jordan.html" target="_blank">Jordan</a></li>  
+</ul></li>
+<li><a href="sale.html" title="SALE">SALE</a></li>
+<li><a href="wear.html" title="Áo quần thể thao">Áo quần thể thao</a></li>
+<li><a href="blog.html" title="Blog - Tin tức">Blog - News</a></li>
+<li><a href="aboutus.html" title="Về chúng tôi">Về chúng tôi</a></li>
+<li><a href="printorder.html" target="_blank" title="Kiểm tra đơn hàng">Kiểm tra đơn hàng</a></li>
+<li><a href="cart.html" target="_blank" title="Xem giỏ hàng" id="countgiohang">Giỏ hàng (0)</a></li>
+<li><input type="text" placeholder="Tìm kiếm" id="search_key" class="search" /><button class="search_button" type="submit" onclick="search()"></button></li>
+</ul>
+</div>
+<div id="cart_checkout">
+	<div id="content_empty">
+    <h1>Giỏ hàng trống không thể thanh toán</h1>
+    </div>
+    <div id="content">
+        <div class="left">
+        <div class="cart_item">
+        <h1>1. Giỏ hàng của bạn</h1>
+        <ul>
+            <li style="background-color: #FFF; padding-bottom: 10px; font-weight: bold;"><div class="c1" style="margin-left: 20px;">Sản phẩm</div>
+            <div class="c2">Size</div><div class="c3">Số lượng</div><div class="c4">Giá</div></li>
+            <div id="printcart"></div>
+        </ul>
+        </div>
+       
+        <div class="total_tien"><span id="total"></span></div>
+        <div class="payment">
+        <h1>2. Thông tin người nhận</h1>
+        
+        
+        <div class="thanhtoan" id="form">
+        	<li><input type="radio" name="radio" checked="checked" id="delivery_normal"/>Chuyển phát bình thường - Bưu điện<sub> (Miễn phí)</sub></li>
+        </div>
+        <form id="thongtin">
+        <table>
+        	<tr>
+            	<td><span class="caption">Tên người nhận: </span><span class="red">* </span></td>
+                <td><input type="text" id="receiver" class="text" pattern="[a-zA-Z' ']{2,50}" required="required" title="Vui lòng nhập tên chính xác (2 - 50 ký tự)"/></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Địa chỉ: </span><span class="red">* </span></td>
+                <td><input type="text" pattern="[a-zA-Z0-9' '/]{10,100}" id="address" class="text" title="Vui lòng nhập địa chỉ nhận hàng chính xác" required="required" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Số điện thoại: </span><span class="red">* </span></td>
+                <td><input type="tell" id="telephone" class="text" pattern="[0-9].{8,12}" required="required" title="Vui lòng nhập số điện thoại (0-9) - 12 số" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Email: </span><span class="red">* </span></td>
+                <td><input type="email" id="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"class="text" required="required" title="Vui lòng nhập Email chính xác (ví dụ: tenban@gmail.com)" /></td>
+            </tr>
+        </table>
+        
+        <h1>3.Thông tin thanh toán</h1>
+        <div id="pay">
+        <div class="select_payment"><img src="images/visa.png" id="iconvisa" class="icon" onclick="showhide_pay('visa', 'mastercard'); getMY(); changeclass('iconmaster', 'iconvisa')"/>
+        <img src="images/master.png" class="icon" id="iconmaster" onclick="showhide_pay('mastercard', 'visa'); getMY(); changeclass('iconvisa', 'iconmaster')"/></div>
+        <table id="visa">
+        	<tr>
+            	<td><span class="caption">Tên chủ thẻ: </span><span class="red">* </span></td>
+                <td><input type="text" id="cardholder" pattern="[a-zA-Z' ']{5,50}" class="text" required="required" title="Vui lòng nhập tên chủ thẻ (Ví dụ: NGUYỄN VĂN A)" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Mã thẻ: </span><span class="red">* </span></td>
+                <td><input type="text" id="cardnumber" pattern="[4]{1}[0-9]{11}" class="text" required="required" title="Vui lòng nhập mã thẻ chính xác (12 số)"/></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Ngày hết hạn: </span><span class="red">* </span></td>
+                <td><select id="month"></select><select id="year"></select></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">CCV: </span><span class="red">* </span></td>
+                <td><input type="password" id="ccv" pattern="[0-9]{3}" required="required"title="Vui lòng nhập mã CCV (3 số)" class="ccv" /></td>
+            </tr>
+        </table>
+        <table id="mastercard">
+        	<tr>
+            	<td><span class="caption">Tên chủ thẻ: </span><span class="red">* </span></td>
+                <td><input type="text" id="cardholder" pattern="[a-zA-Z' ']{5,50}" class="text" required="required" title="Vui lòng nhập tên chủ thẻ (Ví dụ: NGUYỄN VĂN A)" /></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Mã thẻ: </span><span class="red">* </span></td>
+                <td><input type="text" id="cardnumber" pattern="[5]{1}[0-9]{11}" class="text" required="required" title="Vui lòng nhập mã thẻ chính xác (12 số)"/></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">Ngày hết hạn: </span><span class="red">* </span></td>
+                <td><select id="month2"></select><select id="year2"></select></td>
+            </tr>
+            <tr>
+            	<td><span class="caption">CCV: </span><span class="red">* </span></td>
+                <td><input type="password" id="ccv" pattern="[0-9]{3}" required="required"title="Vui lòng nhập mã CCV (3 số)" class="ccv" /></td>
+            </tr>
+        </table>
+        <button type="submit" id="button" onclick="get_order()">THANH TOÁN</button>
+        </form>
+        </div>
+        </div>
+        </div>
+    	<div class="right">
+        <h1>Liên hệ</h1>
+        <ul>
+            	<li>SneakerST Việt Nam</li>
+                <li>Địa chỉ: Địa chỉ: 122/10 Quang Trung, Quận 12, TP.HCM</li>
+                <li>Hotline: 0165.201.627</li>
+                <li>Email: hotro.sneakerst@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

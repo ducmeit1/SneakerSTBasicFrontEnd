@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Sneaker Store Online in Vietnam - Sneaker News for Vietnamese">
+<meta name="author" content="DucMeIT">
+<meta http-equiv="content-language" content="en">
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="stylesheet" type="text/css" href="order.css" />
+<title>SneakerST|VN - Sneaker Store Online Vietnam - Sneaker News</title>
+<script src="getinfo_cart.js"></script>
+<script src="printorder.js"></script>
+<script>
+function search()
+{
+	var key=document.getElementById('search_key').value;
+	window.open("http://google.com/search?q="+key+"");
+	location.reload();
+}
+</script>
+</head>
+
+<body>
+<body onload="printItem(); checkcountcart();">
+<div id="header_wrap">
+<ul id="navbar">
+<li><a href="index.html"><img class="logo_sneaker" src="images/logo.png" alt="SneakerST|VN" title="Shop Sneaker Online - Tin tức về Sneaker" /></a></li>
+<li class="topdown_menu"><a href="hangmoi-page1.html" title="Hàng mới">Hàng mới</a>
+	<ul class="dropdown_menu" style="width: 100%; height: 260px;">
+    <div class="content_align">
+            	<li><img src="images/men.jpg" alt="Men" title="Giày Nam mới" /> <p>Giày Nam</p><span class="blur-content"><span><a href="men.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/woman.jpg" alt="Woman" title="Giày Nữ mới" /> <p>Giày Nữ</p><span class="blur-content"><span><a href="woman.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+                <li><img src="images/newwear.jpg" alt="Wear" title="Áo quần thể thao" /> <p>Áo quần thể thao</p><span class="blur-content"><span><a href="wear.html"><div class="hovermua">MUA NGAY</div></a></span></span></li>
+           
+        </div>
+    </ul></li>
+<li class="topdown_menu"><a href="#" title="Sneakers">SneakerS</a>
+<ul class="dropdown_menu menu1" style="left: 436px;">
+                <li><a href="men.html">NAM</a></li>
+                <li><a href="woman.html">NỮ</a></li>
+                <li><a href="basketball.html">BÓNG RỔ</a></li>
+    </ul>
+</li>
+<li class="topdown_menu"><a href="#" title="Thương hiệu">Thương hiệu</a>
+<ul class="dropdown_menu menu1" style="left: 549px;">
+                <li><a href="adidas.html" target="_blank">Adidas</a></li>
+                <li><a href="newbalance.html" target="_blank">New Balance</a></li>  
+                <li><a href="nike.html" target="_blank">Nike</a></li>
+                <li><a href="acis.html" target="_blank">ASICS</a></li>
+                <li><a href="jordan.html" target="_blank">Jordan</a></li>  
+</ul></li>
+<li><a href="sale.html" title="SALE">SALE</a></li>
+<li><a href="wear.html" title="Áo quần thể thao">Áo quần thể thao</a></li>
+<li><a href="blog.html" title="Blog - Tin tức">Blog - News</a></li>
+<li><a href="aboutus.html" title="Về chúng tôi">Về chúng tôi</a></li>
+<li><a href="printorder.html" target="_blank" title="Kiểm tra đơn hàng">Kiểm tra đơn hàng</a></li>
+<li><a href="cart.html" target="_blank" title="Xem giỏ hàng" id="countgiohang" onmouseover="showcart()">Giỏ hàng (0)</a><div id="cartlist" style="position: absolute; max-width: 440px; max-height: 1050px; background-color: #000; color: #FFF; top: 95px; padding: 5px; box-sizing: content-box;" onmouseout="hidecart()"></div></li>
+<li><input type="text" placeholder="Tìm kiếm" id="search_key" class="search" /><button class="search_button" type="submit" onclick="search()"></button></li>
+</ul>
+</div>
+
+<div id="order_content">
+<div id="xemdonhang">
+<h1 style="position: relative; left: 31%">KIỂM TRA ĐƠN HÀNG</h1>
+<input type="text" title="Vui lòng nhập mã đơn hàng" id="donhang" /><button onclick="printOrder()">KIỂM TRA</button>
+</div>
+<div id="content_order">
+</div>
+</body>
+</html>
